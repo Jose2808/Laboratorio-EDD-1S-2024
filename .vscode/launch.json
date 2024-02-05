@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "Run GDB",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/Clase 3/DoublyLinkedList/main.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}/Clase 3/DoublyLinkedList",
+        "externalConsole": false,
+        "MIMode": "gdb",
+    },
+    {
+        "name": "Intel Debug Attach",
+        "type": "cppvsdbg",
+        "request": "attach",
+        "processId": "${command:pickProcess}"
+    }
+    ]
+}
