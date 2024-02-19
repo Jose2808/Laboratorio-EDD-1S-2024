@@ -1,0 +1,15 @@
+ digraph G {
+ "Nodo    0"[label = "           6 "]
+ "Nodo    1"[label = "           5 "]
+ "Nodo    2"[label = "           4 "]
+ "Nodo    3"[label = "           3 "]
+ "Nodo    4"[label = "           2 "]
+ "Nodo    5"[label = "           1 "]
+ "Nodo    6"[label = "          10 "]
+ "Nodo    7"[label = "          20 "]
+ "Nodo    8"[label = "          30 "]
+ "Nodo    9"[label = "          40 "]
+ "Nodo   10"[label = "          50 "]
+ "Nodo    0"->"Nodo    1"->"Nodo    2"->"Nodo    3"->"Nodo    4"->"Nodo    5"->"Nodo    6"->"Nodo    7"->"Nodo    8"->"Nodo    9"->"Nodo   10"->"Nodo    0"
+ rankdir = LR
+ }

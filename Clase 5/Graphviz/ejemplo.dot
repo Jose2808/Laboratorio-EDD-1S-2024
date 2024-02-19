@@ -1,0 +1,35 @@
+digraph G{
+    subgraph cluster_h{
+        label = "Cola de espera"
+        bgcolor = beige;
+        fontname = "Comic Sans MS";
+
+        nodo1[label = "Cliente 1"];
+        nodo2[label = "Cliente 2"];
+        nodo3[label = "Cliente 3"];
+        nodo4[label = "Cliente 4"];
+
+        nodo1->nodo2->nodo3->nodo4;
+    }
+
+    subgraph cluster_i{
+        label = "Ventanillas"
+        nodo5[label = "Ventanilla 1"]
+        nodo6[label = "Ventanilla 2"]
+
+        nodo7[label = "Imp G"];
+        nodo8[label = "Imp P"];
+
+        nodo9[label = "Cliente 2"];
+        nodo10[label = "Cliente 1"];
+
+        nodo5->nodo6;
+        nodo5->nodo7->nodo8;
+
+        nodo9->nodo5
+        nodo10->nodo6
+
+        {rank="same";nodo5;nodo6;}
+
+    }
+}
