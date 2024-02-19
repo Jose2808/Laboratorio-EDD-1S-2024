@@ -1,22 +1,27 @@
 [
     {
       "nombre": "Perro",
-      "id": 1
+      "id": 2,
+      "id_str": "2"
     },
     {
       "nombre": "Gato",
-      "id": 1
+      "id": 4,
+      "id_str": "4"
     },
     {
       "nombre": "Rata",
-      "id": 1
+      "id": 6,
+      "id_str": "6"
     },
     {
       "nombre": "Tigre",
-      "id": 1
+      "id": 8,
+      "id_str": "8"
     },
     {
       "nombre": "Conejo",
-      "id": 1
+      "id": 10,
+      "id_str": "10"
     }
 ]

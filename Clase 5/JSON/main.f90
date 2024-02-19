@@ -9,7 +9,9 @@ program main
     integer :: size
     integer :: i
     character(:), allocatable :: nombre
+    character(:), allocatable :: id_str
     integer :: id
+    integer :: id_int
 
     call json%initialize()
     call json%load(filename='data.json')
@@ -20,12 +22,26 @@ program main
 
     do i = 1, size
         call jsonc%get_child(listPointer, i, animalPointer, found)
+
+        !imprimiendo el atributo nombre
         call jsonc%get_child(animalPointer, 'nombre', attributePointer, found)
         call jsonc%get(attributePointer, nombre)
         print *, nombre
+
+        !imprimiendo el atributo id
         call jsonc%get_child(animalPointer, 'id', attributePointer, found)
         call jsonc%get(attributePointer, id)
         print *, id
+
+        !imprimiendo el atributo id_str
+        call jsonc%get_child(animalPointer, 'id_str', attributePointer, found) 
+        call jsonc%get(attributePointer, id_str)
+        print *, "Imprimiendo el id en str: ", id_str   
+        
+        !parseando str a int
+        read(id_str, *) id_int
+        print *, "Imprimiendo el id_str en formato int: ", id_int
+        
     end do
 
     call json%destroy()
