@@ -28,8 +28,9 @@ digraph G{
 
         nodo9->nodo5
         nodo10->nodo6
-
+        
         {rank="same";nodo5;nodo6;}
 
     }
+    rankdir=TB;
 }
