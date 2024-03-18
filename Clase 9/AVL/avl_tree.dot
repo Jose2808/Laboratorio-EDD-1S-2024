@@ -1,0 +1,13 @@
+ digraph G {
+ "Nodof00b792c-8c83-425a-5598-ce55fef97505"[label= "          20 "]
+ "Nodof00b792c-8c83-425a-5598-ce55fef97505"->"Nodoccb88653-b234-4b7e-53d6-b078f6f3e9ac"
+ "Nodof00b792c-8c83-425a-5598-ce55fef97505"->"Nododa1bcfc3-ae0d-488c-790d-e27bb7fb5e20"
+ "Nodoccb88653-b234-4b7e-53d6-b078f6f3e9ac"[label= "          10 "]
+ "Nodoccb88653-b234-4b7e-53d6-b078f6f3e9ac"->"Nodofdf902cd-81f4-4ee3-48c8-26dcfef81c2f"
+ "Nodoccb88653-b234-4b7e-53d6-b078f6f3e9ac"->"Nodof6417f89-902f-4213-4746-6ae4f5a74138"
+ "Nodofdf902cd-81f4-4ee3-48c8-26dcfef81c2f"[label= "           8 "]
+ "Nodof6417f89-902f-4213-4746-6ae4f5a74138"[label= "          19 "]
+ "Nododa1bcfc3-ae0d-488c-790d-e27bb7fb5e20"[label= "          30 "]
+ "Nododa1bcfc3-ae0d-488c-790d-e27bb7fb5e20"->"Nodofbf84e4a-8ad0-451c-4118-5a83fedeb2a5"
+ "Nodofbf84e4a-8ad0-451c-4118-5a83fedeb2a5"[label= "          29 "]
+ }

@@ -12,5 +12,6 @@ program main
     call m%insert(0,1,.true.)
     call m%insert(1,1,.true.)
 
+    call m%graficar()
     call m%print()
 end program main

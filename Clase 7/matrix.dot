@@ -1,0 +1,82 @@
+ digraph Matrix {
+ node[shape = "box"]
+ "Nodo0_0"[label = "root", group="0"]                                                                                                                  
+ "Nodo0_0"->"Nodo1_0"
+ "Nodo0_0"->"Nodo1_0"[dir = back]
+ "Nodo0_0"->"Nodo0_1"
+ "Nodo0_0"->"Nodo0_1"[dir = back]
+ "Nodo1_0"[label = "0", group="1"]                                                                                                                     
+ "Nodo1_0"->"Nodo2_0"
+ "Nodo1_0"->"Nodo2_0"[dir = back]
+ "Nodo1_0"->"Nodo1_2"
+ "Nodo1_0"->"Nodo1_2"[dir = back]
+ "Nodo2_0"[label = "1", group="2"]                                                                                                                     
+ "Nodo2_0"->"Nodo3_0"
+ "Nodo2_0"->"Nodo3_0"[dir = back]
+ "Nodo2_0"->"Nodo2_2"
+ "Nodo2_0"->"Nodo2_2"[dir = back]
+ "Nodo3_0"[label = "2", group="3"]                                                                                                                     
+ "Nodo3_0"->"Nodo6_0"
+ "Nodo3_0"->"Nodo6_0"[dir = back]
+ "Nodo3_0"->"Nodo3_7"
+ "Nodo3_0"->"Nodo3_7"[dir = back]
+ "Nodo6_0"[label = "5", group="6"]                                                                                                                     
+ "Nodo6_0"->"Nodo9_0"
+ "Nodo6_0"->"Nodo9_0"[dir = back]
+ "Nodo6_0"->"Nodo6_1"
+ "Nodo6_0"->"Nodo6_1"[dir = back]
+ "Nodo9_0"[label = "8", group="9"]                                                                                                                     
+ "Nodo9_0"->"Nodo10_0"
+ "Nodo9_0"->"Nodo10_0"[dir = back]
+ "Nodo9_0"->"Nodo9_5"
+ "Nodo9_0"->"Nodo9_5"[dir = back]
+ "Nodo10_0"[label = "9", group="10"]                                                                                                                   
+ "Nodo10_0"->"Nodo10_8"
+ "Nodo10_0"->"Nodo10_8"[dir = back]
+ {rank=same;"Nodo0_0";"Nodo1_0";"Nodo2_0";"Nodo3_0";"Nodo6_0";"Nodo9_0";"Nodo10_0"}
+ "Nodo0_1"[label = "0", group="0"]                                                                                                                     
+ "Nodo0_1"->"Nodo6_1"
+ "Nodo0_1"->"Nodo6_1"[dir = back]
+ "Nodo0_1"->"Nodo0_2"
+ "Nodo0_1"->"Nodo0_2"[dir = back]
+ "Nodo6_1"[label = "F", group="6"]                                                                                                                     
+ {rank=same;"Nodo0_1";"Nodo6_1"}
+ "Nodo0_2"[label = "1", group="0"]                                                                                                                     
+ "Nodo0_2"->"Nodo1_2"
+ "Nodo0_2"->"Nodo1_2"[dir = back]
+ "Nodo0_2"->"Nodo0_4"
+ "Nodo0_2"->"Nodo0_4"[dir = back]
+ "Nodo1_2"[label = "T", group="1"]                                                                                                                     
+ "Nodo1_2"->"Nodo2_2"
+ "Nodo1_2"->"Nodo2_2"[dir = back]
+ "Nodo2_2"[label = "T", group="2"]                                                                                                                     
+ "Nodo2_2"->"Nodo2_4"
+ "Nodo2_2"->"Nodo2_4"[dir = back]
+ {rank=same;"Nodo0_2";"Nodo1_2";"Nodo2_2"}
+ "Nodo0_4"[label = "3", group="0"]                                                                                                                     
+ "Nodo0_4"->"Nodo2_4"
+ "Nodo0_4"->"Nodo2_4"[dir = back]
+ "Nodo0_4"->"Nodo0_5"
+ "Nodo0_4"->"Nodo0_5"[dir = back]
+ "Nodo2_4"[label = "F", group="2"]                                                                                                                     
+ {rank=same;"Nodo0_4";"Nodo2_4"}
+ "Nodo0_5"[label = "4", group="0"]                                                                                                                     
+ "Nodo0_5"->"Nodo9_5"
+ "Nodo0_5"->"Nodo9_5"[dir = back]
+ "Nodo0_5"->"Nodo0_7"
+ "Nodo0_5"->"Nodo0_7"[dir = back]
+ "Nodo9_5"[label = "F", group="9"]                                                                                                                     
+ {rank=same;"Nodo0_5";"Nodo9_5"}
+ "Nodo0_7"[label = "6", group="0"]                                                                                                                     
+ "Nodo0_7"->"Nodo3_7"
+ "Nodo0_7"->"Nodo3_7"[dir = back]
+ "Nodo0_7"->"Nodo0_8"
+ "Nodo0_7"->"Nodo0_8"[dir = back]
+ "Nodo3_7"[label = "F", group="3"]                                                                                                                     
+ {rank=same;"Nodo0_7";"Nodo3_7"}
+ "Nodo0_8"[label = "7", group="0"]                                                                                                                     
+ "Nodo0_8"->"Nodo10_8"
+ "Nodo0_8"->"Nodo10_8"[dir = back]
+ "Nodo10_8"[label = "F", group="10"]                                                                                                                   
+ {rank=same;"Nodo0_8";"Nodo10_8"}
+ }

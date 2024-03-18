@@ -31,6 +31,7 @@ module matrix_m
         procedure :: existeNodo
         procedure :: print
         procedure :: imprimirEncabezadoColumnas
+        procedure :: graficar
         procedure :: obtenerValor
     end type matrix
 
@@ -197,6 +198,113 @@ contains
         end do
         return
     end function existeNodo
+
+    subroutine graficar(self)
+        class(matrix), intent(in) :: self
+        
+        integer :: io
+        integer :: i
+        character(len=10) :: str_i
+        character(len=10) :: str_j
+        character(len=10) :: str_i_aux
+        character(len=10) :: str_j_aux
+        character(len=150) :: node_dec
+        character(len=20) :: nombre
+
+        character(len=100) :: comando
+        character(len=50) :: contenido
+        character(:), allocatable :: rank
+        character(:), allocatable :: conexion
+        character(:), allocatable :: conexionRev
+        type(node), pointer :: fila_aux
+        type(node), pointer :: columna_aux
+        io = 1
+        fila_aux => self%root
+        comando = "dot -Tpng ./matrix.dot -o ./matrix.png"
+
+        open(newunit=io, file="./matrix.dot")
+
+        write(io, *) "digraph Matrix {"
+        write(io, *) 'node[shape = "box"]'
+
+        do while (associated(fila_aux))
+            rank = "{rank=same"
+            columna_aux => fila_aux
+            do while(associated(columna_aux)) 
+                write(str_i, '(I10)') columna_aux%i + 1
+                write(str_j, '(I10)') columna_aux%j + 1
+                nombre = '"Nodo'//trim(adjustl(str_i))//'_'//trim(adjustl(str_j))//'"'
+
+                if (columna_aux%i == -1 .and. columna_aux%j == -1) then
+                    node_dec = trim(adjustl(nombre))//'[label = "root", group="'//trim(adjustl(str_i))//'"]'
+
+                else if(columna_aux%i == -1) then
+                    write(str_j_aux, '(I10)') columna_aux%j
+                    contenido = trim(adjustl(str_j_aux))
+                    node_dec = trim(adjustl(nombre))//'[label = "'//trim(adjustl(contenido))
+                    node_dec = trim(adjustl(node_dec))//'", group="'//trim(adjustl(str_i))//'"]'
+                    
+                else if(columna_aux%j == -1) then
+                    write(str_i_aux, '(I10)') columna_aux%i
+                    contenido = trim(adjustl(str_i_aux))
+                    node_dec = trim(adjustl(nombre))//'[label = "'//trim(adjustl(contenido))
+                    node_dec = trim(adjustl(node_dec))//'", group="'//trim(adjustl(str_i))//'"]'
+                        
+                else
+                    if(columna_aux%valor) then
+                        contenido = 'T'
+                    else
+                        contenido = 'F'
+                    end if 
+                    node_dec = trim(adjustl(nombre))//'[label = "'//trim(adjustl(contenido))
+                    node_dec = trim(adjustl(node_dec))//'", group="'//trim(adjustl(str_i))//'"]'
+                end if
+                write(io, *) node_dec
+
+                if(associated(columna_aux%derecha)) then
+                    conexion = '"Nodo'//trim(adjustl(str_i))//'_'//trim(adjustl(str_j))//'"->'
+
+                    write(str_i_aux, '(I10)') columna_aux%derecha%i + 1
+                    write(str_j_aux, '(I10)') columna_aux%derecha%j + 1
+
+                    conexion = conexion//'"Nodo'//trim(adjustl(str_i_aux))//'_'//trim(adjustl(str_j_aux))//'"'
+                    conexionRev = conexion//'[dir = back]'
+                    write(io, *) conexion
+                    write(io, *) conexionRev
+                end if
+
+                if(associated(columna_aux%abajo)) then
+                    conexion = '"Nodo'//trim(adjustl(str_i))//'_'//trim(adjustl(str_j))//'"->'
+
+                    write(str_i_aux, '(I10)') columna_aux%abajo%i + 1
+                    write(str_j_aux, '(I10)') columna_aux%abajo%j + 1
+
+                    conexion = conexion//'"Nodo'//trim(adjustl(str_i_aux))//'_'//trim(adjustl(str_j_aux))//'"'
+                    conexionRev = conexion//'[dir = back]'
+                    write(io, *) conexion
+                    write(io, *) conexionRev
+                end if
+
+                rank = rank//';"Nodo'//trim(adjustl(str_i))//'_'//trim(adjustl(str_j))//'"'
+                columna_aux => columna_aux%derecha
+            end do
+            rank = rank//'}'
+            write(io, *) rank
+
+            fila_aux => fila_aux%abajo
+        end do
+        write(io, *) "}"
+        close(io)
+        
+        call execute_command_line(comando, exitstat=i)
+
+        if ( i == 1 ) then
+            print *, "Ocurrió un error al momento de crear la imagen"
+        else
+            print *, "La imagen fue generada exitosamente"
+        end if
+    end subroutine graficar
+
 
     subroutine print(self)
         class(matrix), intent(in) :: self
