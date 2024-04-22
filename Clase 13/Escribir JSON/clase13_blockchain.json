@@ -1,0 +1,48 @@
+[
+  {
+    "INDEX": 0,
+    "NONCE": 4560,
+    "DATA": [
+      {
+        "sucursal_o": 1,
+        "direccion_o": "5ta av 4 calle zona 18, Guatemala, Guatemala",
+        "sucursal_d": 2,
+        "direccion_d": "6ta av 12 calle zona 1, Guatemala, Guatemala",
+        "total": -60
+      },
+      {
+        "sucursal_o": 2,
+        "direccion_o": "6ta av 12 calle zona 1, Guatemala, Guatemala",
+        "sucursal_d": 3,
+        "direccion_d": "9na av 5 calle zona 6, Guatemala, Guatemala",
+        "total": 400
+      }
+    ],
+    "ROOTMERKLE": "0670CA58C16C7DCEF2FB8A0B138226FBC1C140DA076C744C71A61593DA747515",
+    "PREVIOUSHASH": "0000",
+    "HASH": "1550D2D68739367A4967960E44FBC53397BA0F56C3FCE3D032E41153AC2FAA2C"
+  },
+  {
+    "INDEX": 1,
+    "NONCE": 6456,
+    "DATA": [
+      {
+        "sucursal_o": 1,
+        "direccion_o": "5ta av 4 calle zona 18, Guatemala, Guatemala",
+        "sucursal_d": 2,
+        "direccion_d": "6ta av 12 calle zona 1, Guatemala, Guatemala",
+        "total": -60
+      },
+      {
+        "sucursal_o": 2,
+        "direccion_o": "6ta av 12 calle zona 1, Guatemala, Guatemala",
+        "sucursal_d": 3,
+        "direccion_d": "9na av 5 calle zona 6, Guatemala, Guatemala",
+        "total": 400
+      }
+    ],
+    "ROOTMERKLE": "0670CA58C16C7DCEF2FB8A0B138226FBC1C140DA076C744C71A61593DA747515",
+    "PREVIOUSHASH": "1550D2D68739367A4967960E44FBC53397BA0F56C3FCE3D032E41153AC2FAA2C",
+    "HASH": "sadfasdfasfasdfasfd"
+  }
+]
