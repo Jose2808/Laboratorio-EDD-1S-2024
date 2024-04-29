@@ -23,8 +23,13 @@ program main
     implicit none
     type(c_ptr) :: e
     character(len=:), pointer :: e_str
+    character(len=:), allocatable :: route
 
-    e = encode("https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg?cs=srgb&dl=pexels-kerber-774731.jpg&fm=jpg")
+    route = "D:\monte\OneDrive\Escritorio\Universidad\"
+    route = route//"Practicas Finales\Estructuras de Datos\Fortran\"
+    route = route//"encode-decode\cat.jpg"
+
+    e = encode(route)
     call c_f_pointer(CPTR=e, FPTR=e_str)
     print *, 'IMPRIMIENDO LA IMAGEN EN BASE64'
     print *, e_str
